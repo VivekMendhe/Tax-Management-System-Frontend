@@ -1,0 +1,74 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">Income Tax Calculator</h2>
+    <form (ngSubmit)="calculateTax()" class="space-y-4">
+      <div>
+        <label for="grossAmount" class="block text-sm font-medium text-gray-700"
+          >Gross Amount</label
+        >
+        <input
+          type="number"
+          id="grossAmount"
+          [(ngModel)]="grossAmount"
+          name="grossAmount"
+          required
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        />
+      </div>
+      <div>
+        <span class="block text-sm font-medium text-gray-700">Tax Regime</span>
+        <div class="mt-2 flex items-center">
+          <input
+            type="radio"
+            id="oldRegime"
+            [(ngModel)]="selectedRegime"
+            name="regime"
+            value="old"
+            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
+          />
+          <label
+            for="oldRegime"
+            class="ml-3 block text-sm font-medium text-gray-700"
+            >Old Regime</label
+          >
+        </div>
+        <div class="mt-2 flex items-center">
+          <input
+            type="radio"
+            id="newRegime"
+            [(ngModel)]="selectedRegime"
+            name="regime"
+            value="new"
+            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
+          />
+          <label
+            for="newRegime"
+            class="ml-3 block text-sm font-medium text-gray-700"
+            >New Regime</label
+          >
+        </div>
+      </div>
+      <div>
+        <button
+          type="submit"
+          class="w-full bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700"
+        >
+          Calculate Tax
+        </button>
+      </div>
+    </form>
+
+    @if (taxAmount !== null) {
+    <div class="mt-6 flex justify-between items-center">
+      <h3 class="text-xl font-bold">Tax Amount: ₹{{ taxAmount }}</h3>
+      <img
+        src="/icons/taxes.png"
+        alt="tax image"
+        srcset=""
+        height="50"
+        width="50"
+      />
+    </div>
+    }
+  </div>
+</div>

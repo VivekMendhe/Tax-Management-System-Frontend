@@ -1,0 +1,96 @@
+<div class="bg-blue-600 text-white shadow-lg fixed top-0 w-full z-50">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <div class="flex items-center">
+      <button
+        class="text-white focus:outline-none sm:hidden"
+        (click)="toggleMenu()"
+      >
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+
+      <div class="hidden sm:flex space-x-6">
+        <div
+          [routerLink]="'/'"
+          class="hover:text-gray-300 hover:cursor-pointer"
+        >
+          Home
+        </div>
+        <div
+          [routerLink]="'/tax-calculate'"
+          class="hover:text-gray-300 hover:cursor-pointer"
+        >
+          Tax Calculator
+        </div>
+        <div
+          [routerLink]="'#'"
+          class="hover:text-gray-300 hover:cursor-pointer"
+        >
+          Resources
+        </div>
+        <div
+          [routerLink]="'#'"
+          class="hover:text-gray-300 hover:cursor-pointer"
+        >
+          About Us
+        </div>
+        <div
+          [routerLink]="'#'"
+          class="hover:text-gray-300 hover:cursor-pointer"
+        >
+          Pricing
+        </div>
+      </div>
+    </div>
+    <div class="hidden sm:flex space-x-6">
+      <!-- You can add additional items here -->
+    </div>
+  </div>
+
+  <div [ngClass]="{ hidden: !isMenuOpen }" class="sm:hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <div
+        [routerLink]="'/'"
+        class="block text-base font-medium text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md"
+      >
+        Home
+      </div>
+      <div
+        [routerLink]="'/tax-calculate'"
+        class="block text-base font-medium text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md"
+      >
+        Tax Calculator
+      </div>
+      <div
+        [routerLink]="'#'"
+        class="block text-base font-medium text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md"
+      >
+        Resources
+      </div>
+      <div
+        [routerLink]="'#'"
+        class="block text-base font-medium text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md"
+      >
+        About Us
+      </div>
+      <div
+        [routerLink]="'#'"
+        class="block text-base font-medium text-white hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md"
+      >
+        Pricing
+      </div>
+    </div>
+  </div>
+</div>
